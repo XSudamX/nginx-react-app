@@ -4,8 +4,7 @@ ARG repoarg
 ENV repo=$repoarg
 WORKDIR /app
 RUN git clone ${repo} .
-RUN npm install
-RUN npm run build
+RUN npm install && npm run build
 
 # Production Stage
 FROM nginx:latest
