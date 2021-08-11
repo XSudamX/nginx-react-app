@@ -2,12 +2,12 @@ version: '3.3'
 services:
     web-server:
         container_name: nginx-react-app
-        build: 
+        build:
             context: .
             dockerfile: Dockerfile
+            args:
+                - repoarg=${git_repo}
         ports:
             - 80:80
         volumes:
             - ./default.conf:/etc/nginx/conf.d/default.conf
-        args: 
-            - repoarg=${git_repo}
