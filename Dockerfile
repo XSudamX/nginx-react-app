@@ -1,5 +1,7 @@
 # Build Stage
 FROM node:latest AS build-stage
+ARG repoarg
+ENV repo=$repoarg
 WORKDIR /app
 RUN git clone ${repo} .
 RUN npm install

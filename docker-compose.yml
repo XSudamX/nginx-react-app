@@ -9,5 +9,5 @@ services:
             - 80:80
         volumes:
             - ./default.conf:/etc/nginx/conf.d/default.conf
-        environment: 
-            - repo=${git_repo}
+        args: 
+            - repoarg=${git_repo}
